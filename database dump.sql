@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2025 at 10:24 PM
+-- Generation Time: Feb 08, 2025 at 12:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -111,25 +111,24 @@ CREATE TABLE `sprzety` (
   `wartoscBrutto` double NOT NULL,
   `status` int(11) NOT NULL,
   `zdjecie` longblob DEFAULT NULL,
-  `uwagi` varchar(255) NOT NULL,
-  `zdarzenie` int(11) DEFAULT NULL
+  `uwagi` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `sprzety`
 --
 
-INSERT INTO `sprzety` (`idSprzetu`, `numerInwentaryzacyjny`, `numerSeryjny`, `urzadzenie`, `producent`, `model`, `lokalizacja`, `dostawca`, `dataZakupu`, `dataGwarancji`, `dataPrzegladu`, `wartoscBrutto`, `status`, `zdjecie`, `uwagi`, `zdarzenie`) VALUES
-(1, 'INV001', 'SN001', 1, 1, 'Inspiron 15', 1, 1, '2022-01-15', '2024-01-15', '2023-12-15', 3500.5, 1, NULL, 'Nowy laptop', 1),
-(2, 'INV002', 'SN002', 2, 2, 'LaserJet 400', 2, 2, '2022-03-20', '2024-03-20', '2023-11-20', 1200, 1, NULL, 'Nowa drukarka', 2),
-(3, 'INV003', 'SN003', 3, 3, 'ThinkServer TS150', 3, 3, '2021-10-01', '2023-10-01', '2023-08-01', 8000, 2, NULL, 'Serwer w użyciu', 3),
-(4, 'INV004', 'SN004', 4, 4, 'ROG Swift PG259QNR', 4, 4, '2021-12-10', '2023-12-10', '2023-10-10', 4500.75, 3, NULL, 'Monitor w naprawie', 4),
-(5, 'INV005', 'SN005', 5, 5, 'Acer H6517ST', 5, 5, '2022-06-15', '2024-06-15', '2023-12-15', 3200, 1, NULL, 'Projektor biurowy', 5),
-(6, 'INV001', 'SN001', 1, 1, 'Inspiron 15', 1, 1, '2023-01-01', '2025-01-01', '2024-01-01', 3000, 1, NULL, 'Uwagi do sprzętu 1', 1),
-(7, 'INV002', 'SN002', 2, 2, 'Pavilion 14', 2, 2, '2023-02-01', '2025-02-01', '2024-02-01', 4000, 2, NULL, 'Uwagi do sprzętu 2', 2),
-(8, 'INV003', 'SN003', 3, 3, 'VivoBook 15', 3, 3, '2023-03-01', '2025-03-01', '2024-03-01', 3500, 3, NULL, 'Uwagi do sprzętu 3', NULL),
-(9, 'INV004', 'SN004', 4, 4, 'IdeaPad 3', 4, 4, '2023-04-01', '2025-04-01', '2024-04-01', 2500, 4, NULL, 'Uwagi do sprzętu 4', 4),
-(10, 'INV005', 'SN005', 5, 5, 'Galaxy Tab S8', 5, 5, '2023-05-01', '2025-05-01', '2024-05-01', 5000, 5, NULL, 'Uwagi do sprzętu 5', 5);
+INSERT INTO `sprzety` (`idSprzetu`, `numerInwentaryzacyjny`, `numerSeryjny`, `urzadzenie`, `producent`, `model`, `lokalizacja`, `dostawca`, `dataZakupu`, `dataGwarancji`, `dataPrzegladu`, `wartoscBrutto`, `status`, `zdjecie`, `uwagi`) VALUES
+(1, 'INV001', 'SN001', 1, 1, 'Inspiron 15', 1, 1, '2022-01-15', '2024-01-15', '2023-12-15', 3500.5, 1, NULL, 'Nowy laptop'),
+(2, 'INV002', 'SN002', 2, 2, 'LaserJet 400', 2, 2, '2022-03-20', '2024-03-20', '2023-11-20', 1200, 1, NULL, 'Nowa drukarka'),
+(3, 'INV003', 'SN003', 3, 3, 'ThinkServer TS150', 3, 3, '2021-10-01', '2023-10-01', '2023-08-01', 8000, 2, NULL, 'Serwer w użyciu'),
+(4, 'INV004', 'SN004', 4, 4, 'ROG Swift PG259QNR', 4, 4, '2021-12-10', '2023-12-10', '2023-10-10', 4500.75, 3, NULL, 'Monitor w naprawie'),
+(5, 'INV005', 'SN005', 5, 5, 'Acer H6517ST', 5, 5, '2022-06-15', '2024-06-15', '2023-12-15', 3200, 1, NULL, 'Projektor biurowy'),
+(6, 'INV001', 'SN001', 1, 1, 'Inspiron 15', 1, 1, '2023-01-01', '2025-01-01', '2024-01-01', 3000, 1, NULL, 'Uwagi do sprzętu 1'),
+(7, 'INV002', 'SN002', 2, 2, 'Pavilion 14', 2, 2, '2023-02-01', '2025-02-01', '2024-02-01', 4000, 2, NULL, 'Uwagi do sprzętu 2'),
+(8, 'INV003', 'SN003', 3, 3, 'VivoBook 15', 3, 3, '2023-03-01', '2025-03-01', '2024-03-01', 3500, 3, NULL, 'Uwagi do sprzętu 3'),
+(9, 'INV004', 'SN004', 4, 4, 'IdeaPad 3', 4, 4, '2023-04-01', '2025-04-01', '2024-04-01', 2500, 4, NULL, 'Uwagi do sprzętu 4'),
+(10, 'INV005', 'SN005', 5, 5, 'Galaxy Tab S8', 5, 5, '2023-05-01', '2025-05-01', '2024-05-01', 5000, 5, NULL, 'Uwagi do sprzętu 5');
 
 -- --------------------------------------------------------
 
@@ -234,9 +233,9 @@ INSERT INTO `uzytkownicy` (`idUzytkownika`, `login`, `haslo`, `grupa_uzytkownika
 CREATE TABLE `zdarzenia` (
   `idZdarzenia` int(11) NOT NULL,
   `dataRozpoczecia` date NOT NULL,
-  `dataZakoczenia` date NOT NULL,
-  `opisZdarzenia` int(11) NOT NULL,
-  `zalacznik` longblob DEFAULT NULL,
+  `dataZakonczenia` date NOT NULL,
+  `opisZdarzenia` varchar(255) NOT NULL,
+  `zalacznik` varchar(255) DEFAULT NULL,
   `idTypu` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -244,12 +243,44 @@ CREATE TABLE `zdarzenia` (
 -- Dumping data for table `zdarzenia`
 --
 
-INSERT INTO `zdarzenia` (`idZdarzenia`, `dataRozpoczecia`, `dataZakoczenia`, `opisZdarzenia`, `zalacznik`, `idTypu`) VALUES
-(1, '2023-01-10', '2023-01-15', 101, NULL, 1),
-(2, '2023-02-05', '2023-02-10', 102, NULL, 2),
-(3, '2023-03-01', '2023-03-03', 103, NULL, 3),
-(4, '2023-04-20', '2023-04-25', 104, NULL, 4),
-(5, '2023-05-10', '2023-05-12', 105, NULL, 5);
+INSERT INTO `zdarzenia` (`idZdarzenia`, `dataRozpoczecia`, `dataZakonczenia`, `opisZdarzenia`, `zalacznik`, `idTypu`) VALUES
+(1, '2023-01-10', '2023-01-15', 'nic nie dziala', NULL, 1),
+(2, '2023-02-05', '2023-02-10', 'wszystko sie rozwalilo', NULL, 2),
+(3, '2023-03-01', '2023-03-03', 'nie wiem juz co sie dzieje', NULL, 3),
+(4, '2023-04-20', '2023-04-25', 'wszystko to jest chore', NULL, 4),
+(5, '2023-05-10', '2023-05-12', 'znowu to samo', NULL, 5),
+(16, '2025-02-03', '2025-02-07', 'awaria to ten php', NULL, 4),
+(17, '2025-02-03', '2025-02-06', 'aktualizujemy do testu', NULL, 3);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `zdarzenie_sprzet`
+--
+
+CREATE TABLE `zdarzenie_sprzet` (
+  `id` int(11) NOT NULL,
+  `sprzet_id` int(11) NOT NULL,
+  `zdarzenie_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `zdarzenie_sprzet`
+--
+
+INSERT INTO `zdarzenie_sprzet` (`id`, `sprzet_id`, `zdarzenie_id`) VALUES
+(3, 2, 3),
+(4, 3, 2),
+(5, 5, 4),
+(10, 6, 17),
+(11, 8, 16),
+(12, 1, 1),
+(13, 1, 2),
+(14, 1, 3),
+(15, 1, 4),
+(16, 1, 5),
+(17, 1, 16),
+(18, 1, 17);
 
 --
 -- Indexes for dumped tables
@@ -282,8 +313,7 @@ ALTER TABLE `sprzety`
   ADD KEY `sprzety_producenci_idProducenta_fk` (`producent`),
   ADD KEY `sprzety_lokalizacje_idLokalizacji_fk` (`lokalizacja`),
   ADD KEY `sprzety_dostawcy_idDostawcy_fk` (`dostawca`),
-  ADD KEY `sprzety_statusy_idStatusu_fk` (`status`),
-  ADD KEY `sprzety_zdarzenia_idZdarzenia_fk` (`zdarzenie`);
+  ADD KEY `sprzety_statusy_idStatusu_fk` (`status`);
 
 --
 -- Indexes for table `statusy`
@@ -316,6 +346,14 @@ ALTER TABLE `uzytkownicy`
 ALTER TABLE `zdarzenia`
   ADD PRIMARY KEY (`idZdarzenia`),
   ADD KEY `zdarzenia_typy_zdarzen_idTypu_fk` (`idTypu`);
+
+--
+-- Indexes for table `zdarzenie_sprzet`
+--
+ALTER TABLE `zdarzenie_sprzet`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `zdarzenie_sprzet_sprzety_idSprzetu_fk` (`sprzet_id`),
+  ADD KEY `zdarzenie_sprzet_zdarzenia_idZdarzenia_fk` (`zdarzenie_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -373,7 +411,13 @@ ALTER TABLE `uzytkownicy`
 -- AUTO_INCREMENT for table `zdarzenia`
 --
 ALTER TABLE `zdarzenia`
-  MODIFY `idZdarzenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `idZdarzenia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+
+--
+-- AUTO_INCREMENT for table `zdarzenie_sprzet`
+--
+ALTER TABLE `zdarzenie_sprzet`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- Constraints for dumped tables
@@ -387,8 +431,7 @@ ALTER TABLE `sprzety`
   ADD CONSTRAINT `sprzety_lokalizacje_idLokalizacji_fk` FOREIGN KEY (`lokalizacja`) REFERENCES `lokalizacje` (`idLokalizacji`),
   ADD CONSTRAINT `sprzety_producenci_idProducenta_fk` FOREIGN KEY (`producent`) REFERENCES `producenci` (`idProducenta`),
   ADD CONSTRAINT `sprzety_statusy_idStatusu_fk` FOREIGN KEY (`status`) REFERENCES `statusy` (`idStatusu`),
-  ADD CONSTRAINT `sprzety_urzadzenia_idUrzadzenia_fk` FOREIGN KEY (`urzadzenie`) REFERENCES `urzadzenia` (`idUrzadzenia`),
-  ADD CONSTRAINT `sprzety_zdarzenia_idZdarzenia_fk` FOREIGN KEY (`zdarzenie`) REFERENCES `zdarzenia` (`idZdarzenia`);
+  ADD CONSTRAINT `sprzety_urzadzenia_idUrzadzenia_fk` FOREIGN KEY (`urzadzenie`) REFERENCES `urzadzenia` (`idUrzadzenia`);
 
 --
 -- Constraints for table `uzytkownicy`
@@ -401,6 +444,13 @@ ALTER TABLE `uzytkownicy`
 --
 ALTER TABLE `zdarzenia`
   ADD CONSTRAINT `zdarzenia_typy_zdarzen_idTypu_fk` FOREIGN KEY (`idTypu`) REFERENCES `typy_zdarzen` (`idTypu`);
+
+--
+-- Constraints for table `zdarzenie_sprzet`
+--
+ALTER TABLE `zdarzenie_sprzet`
+  ADD CONSTRAINT `zdarzenie_sprzet_sprzety_idSprzetu_fk` FOREIGN KEY (`sprzet_id`) REFERENCES `sprzety` (`idSprzetu`),
+  ADD CONSTRAINT `zdarzenie_sprzet_zdarzenia_idZdarzenia_fk` FOREIGN KEY (`zdarzenie_id`) REFERENCES `zdarzenia` (`idZdarzenia`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
