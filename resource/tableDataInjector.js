@@ -55,11 +55,8 @@ $(document).ready(function () {
             {
                 data: null,
                 render: function (data) {
-                    return data.zdarzenie_opisZdarzenia + '<br>' +
-                        data.zdarzenie_dataRozpoczecia + ' - ' +
-                        data.zdarzenie_dataZakonczenia + '<br>' +
-                        data.typ_zdarzenia + '<br>' +
-                        '<a href="' + data.zdarzenie_zalacznik + '">Załącznik</a>';
+                    console.log(data);
+                    return data.zdarzenie_opisZdarzenia; 
                 }
             },
             {
