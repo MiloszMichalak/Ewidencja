@@ -7,7 +7,7 @@ if (isset($_GET['name'])) {
     $nameProducenta = $_GET['name'];
     $sql = "SELECT model FROM sprzet_medyczny.sprzety WHERE producent = (
         SELECT idProducenta FROM sprzet_medyczny.producenci WHERE nazwa = '$nameProducenta'
-    )";
+    ) GROUP BY 1";
 
     $result = $conn->query($sql);
     $data = [];

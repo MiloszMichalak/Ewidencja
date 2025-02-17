@@ -4,7 +4,7 @@ require_once 'config.php';
 
 class Database
 {
-    private static $instance = null;
+    private static ?Database $instance = null;
     public mysqli $conn;
     
     private function __construct()

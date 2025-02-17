@@ -25,6 +25,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
     echo "Success";
 } else {
-    echo "Invalid request method.";
+    echo "Update sie nie powiódł.";
 }
 

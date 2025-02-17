@@ -5,12 +5,12 @@
     <title>Ewidencja sprzetu medycznego</title>
     <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script defer src="//cdn.datatables.net/2.2.2/js/dataTables.min.js"></script>
-    <script src="../resource/config.js"></script>
-    
+    <script defer src="../resource/deleteEquipmentHandler.js"></script>
     <script src="../resource/tableDataInjector.js" defer></script>
 </head>
 <?php
@@ -45,7 +45,7 @@
                     <select id='select-filter1'>
                         <option value="">Wszystkie</option>
                         <?php
-                            $sql = "SELECT * FROM sprzet_medyczny.producenci";
+                            $sql = "SELECT sprzet_medyczny.producenci.nazwa FROM sprzet_medyczny.producenci";
                             if ($result = $conn->query($sql)) {
                                 while ($row = $result->fetch_array()) {
                                     echo "<option value='".$row['nazwa']."'>".$row['nazwa']."</option>";
@@ -58,7 +58,7 @@
                     <select id="select-models">
                         <option value="">Wszystkie</option>
                         <?php
-                            $sql = "SELECT * FROM sprzet_medyczny.sprzety";
+                            $sql = "SELECT sprzet_medyczny.sprzety.model FROM sprzet_medyczny.sprzety";
                             if ($result = $conn->query($sql)) {
                                 while ($row = $result->fetch_array()) {
                                     echo "<option value='".$row['model']."'>".$row['model']."</option>";
@@ -80,9 +80,10 @@
                             }
                         }
                     ?>
-                    </select>
                 </th>
-                <th><input type="text" placeholder="Filtruj..." class="filter"></th>
+                <th>
+                    <input type="text" placeholder="Filtruj..." class="filter">
+                </th>
                 <th>
                     <input type="text" id="min-date1" placeholder="dd-mm-yyyy" class="filterDate" style=" display: inline-block;" /><br>
                     <input type="text" id="max-date1" placeholder="dd-mm-yyyy" class="filterDate" style=" display: inline-block;" />
@@ -112,13 +113,22 @@
                         ?>
                     </select>
                 </th>
-                <th><input type="text" placeholder="Filtruj..." class="filter"/></th>
-                <th></th>
+                <th>
+                    <input type="text" placeholder="Filtruj..." class="filter"/>
+                </th>
+                <th>
+                    <input type="text" placeholder="Filtruj..." class="filter"/>
+                </th>
             </tr>
         </thead>
         <tbody>
-            
         </tbody>
     </table>
+    <button id="add">Dodaj sprzet</button>
+    <script>
+        document.getElementById('add').addEventListener('click', () => {
+            window.location.href = 'addEquipmentForm.php';
+        });
+    </script>
 </body>
 </html>

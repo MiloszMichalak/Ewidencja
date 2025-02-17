@@ -6,6 +6,9 @@ $(document).ready(function () {
         info: true,
         orderCellsTop: true,
         fixedHeader: true,
+        responsive: true,
+        autowidth: false,
+        dom: 'lrtip',
         columnDefs: [
             { orderable: false, targets: [12, 13] },
         ],
@@ -13,6 +16,9 @@ $(document).ready(function () {
             url: "../src/main/fetchData.php",
             type: "GET",
             dataSrc: ""
+        },
+        language: {
+            url: "https://cdn.datatables.net/plug-ins/2.2.2/i18n/pl.json"
         },
         columns: [
             { data: "numerInwentaryzacyjny" },
@@ -55,14 +61,14 @@ $(document).ready(function () {
             {
                 data: null,
                 render: function (data) {
-                    console.log(data);
                     return data.zdarzenie_opisZdarzenia; 
                 }
             },
             {
                 data: null,
                 render: function (data) {
-                    return '<a href="../public/edit.php?id='+ data.idSprzetu +'">Edytuj</a>';
+                    return '<a href="../public/edit.php?id=' + data.idSprzetu + '">Edytuj</a>' + '<br>' +
+                        '<button class="delete-btn" data-id="' + data.idSprzetu + '">Usuń</button>';
                 }
             }
         ]
@@ -95,7 +101,7 @@ $(document).ready(function () {
     function addDateRangeFilter(table, columnIndex, minInputId, maxInputId) {
         $.fn.dataTable.ext.search.push(function (settings, data) {
             let minDate = new Date($(minInputId).val()).getTime();
-            let maxDate = new Date($(maxInputId).val()).getTime();
+            let maxDate = new Date($(maxInputId).val()).getTime() + 86400000;
              
             let rowDate = new Date(reverse(data[columnIndex].replaceAll(".", "-"))).getTime();
 
@@ -137,7 +143,6 @@ $(document).ready(function () {
                 url: "../src/main/fetchModels.php",
                 type: "GET",
                 success: function (response) {
-                    console.log(response);
                     let models = JSON.parse(response);
 
                     models.forEach(function (model) {
@@ -172,10 +177,8 @@ $(document).ready(function () {
         const selectedModel = $(this).val();
 
         if (selectedModel) {
-            // Filtruj dane w kolumnie 4 (model)
             table.column(4).search("^" + selectedModel + "$", true, false).draw();
         } else {
-            // Resetuj filtr w kolumnie 4
             table.column(4).search("").draw();
         }
     });
