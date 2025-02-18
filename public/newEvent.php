@@ -5,6 +5,8 @@
     <title>Dodawanie nowego zdarzenia</title>
     <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/editStyle.css">
     <script defer src="../resource/config.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -12,6 +14,7 @@
 </head>
 <body>
     <form method="post" action="" id="addEventForm" enctype="multipart/form-data">
+        <h1>Dodaj zdarzenie</h1>
         <label for="typZdarzenia">Typ zdarzenia</label>
         <select name="typZdarzenia" id="typZdarzenia">
             <?php

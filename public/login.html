@@ -5,19 +5,23 @@
     <title>Logowanie</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="../resource/formHandler.js"></script>
+    <link rel="stylesheet" href="../style/authStyle.css">
+    <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    <form method="post" action="" id="loginForm">
-        <label for="login">Login:</label>
-        <input type="text" id="login" name="login">
-        <label for="password">Hasło:</label>
-        <input type="password" id="password" name="password">
-        <br>
-        <button type="submit">Zaloguj</button>
-    </form>
-    <a href="register.php">Nie masz konta? Zarejestruj sie</a>
-    
-    <div id="errorMsg" style="color: red; margin-top: 10px;"></div>
+    <div class="container">
+        <form method="post" action="" id="loginForm">
+            <label for="login">Login:</label>
+            <input type="text" id="login" name="login" required oninvalid="this.setCustomValidity('Proszę wprowadzić login.')" oninput="setCustomValidity('')">
+            <label for="password">Hasło:</label>
+            <input type="password" id="password" name="password" required oninvalid="this.setCustomValidity('Proszę wprowadzić hasło.')" oninput="setCustomValidity('')">
+            <br>
+            <button type="submit">Zaloguj</button>
+            <div id="errorMsg" style="color: red; margin-top: 10px;"></div>
+            <a href="register.php">Nie masz konta? Zarejestruj sie</a>
+        </form>
+        
+    </div>
 
 </body>
 </html>

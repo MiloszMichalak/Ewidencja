@@ -8,13 +8,15 @@
     <meta charset="UTF-8">
     <title>Dodaj sprzęt</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/editStyle.css">
     <script defer src="../resource/addEquipmentHandler.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 <body>
-<h2>Dodaj sprzęt</h2>
 <form method="post" id="add-equipment-form" enctype="multipart/form-data">
+    <h1>Dodaj sprzęt</h1>
     Numer Inwentaryzacyjny: <input type="text" name="numerInwentaryzacyjny" required><br>
     Numer Seryjny: <input type="text" name="numerSeryjny" required><br>
 

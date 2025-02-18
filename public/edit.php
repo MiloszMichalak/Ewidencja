@@ -49,6 +49,8 @@ if (isset($_GET['id'])){
     <title>edit</title>
     <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="stylesheet" href="../style/editStyle.css">
     <script defer src="../resource/config.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
@@ -56,6 +58,7 @@ if (isset($_GET['id'])){
 </head>
 <body>
     <form id="editForm">
+        <h1>Edytuj sprzęt</h1>
         <input type="hidden" name="idSprzetu" value="<?php echo $idSprzetu; ?>">
         
         <label for="dataPrzegladu">Data przegladu</label>
@@ -136,7 +139,7 @@ if (isset($_GET['id'])){
         
 
         <input type="submit" value="Zapisz zmiany">
+        <a href="newEvent.php">Dodaj nowe zdarzenie</a>
     </form>
-    <a href="newEvent.php">Dodaj nowe zdarzenie</a>
 </body>
 </html>

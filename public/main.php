@@ -5,6 +5,7 @@
     <title>Ewidencja sprzetu medycznego</title>
     <link rel="stylesheet" href="//cdn.datatables.net/2.2.2/css/dataTables.dataTables.min.css">
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" />
+    <link rel="stylesheet" href="../style/tableStyle.css">
     <link rel="stylesheet" href="../style/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script defer src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -18,7 +19,10 @@
     $conn = Database::getInstance()->conn;
 ?>
 <body>
-    <h1>Ewidencja</h1>
+    <header>
+        <h1>Ewidencja</h1>
+        <button id="add">Dodaj sprzet</button>
+    </header>
     <table id="equipment-table" border="1">
         <thead>
             <tr>
@@ -36,6 +40,7 @@
                 <th>Status</th>
                 <th>Uwagi</th>
                 <th>Zdarzenie</th>
+                <th>Opcje</th>
             </tr>
             <tr>
                 <th><input type="text" placeholder="Filtruj..." class="filter" /></th>
@@ -119,12 +124,12 @@
                 <th>
                     <input type="text" placeholder="Filtruj..." class="filter"/>
                 </th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
         </tbody>
     </table>
-    <button id="add">Dodaj sprzet</button>
     <script>
         document.getElementById('add').addEventListener('click', () => {
             window.location.href = 'addEquipmentForm.php';

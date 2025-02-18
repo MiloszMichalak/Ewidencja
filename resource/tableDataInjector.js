@@ -10,7 +10,7 @@ $(document).ready(function () {
         autowidth: false,
         dom: 'lrtip',
         columnDefs: [
-            { orderable: false, targets: [12, 13] },
+            { orderable: false, targets: [12, 13, 14] },
         ],
         ajax: {
             url: "../src/main/fetchData.php",
